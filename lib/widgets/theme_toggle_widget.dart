@@ -22,7 +22,10 @@ class ThemeToggleButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             child: isDarkTheme == true
                 ? FaIcon(FontAwesomeIcons.moon)
-                : FaIcon(FontAwesomeIcons.sun)),
+                : FaIcon(
+                    FontAwesomeIcons.sun,
+                    color: Color(0Xffffa726),
+                  )),
         onPressed: () {
           onPressed(context);
         },
