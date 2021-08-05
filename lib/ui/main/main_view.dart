@@ -23,33 +23,13 @@ class MainView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Text(
+                        'Testting data and font',
+                        // style: Theme.of(context).textTheme.,
+                      ),
                       ThemeToggleButton(
                           isDarkTheme: model.isDarkTheme,
                           onPressed: model.onPressedThemeChange),
-                      MaterialButton(
-                        child: Text('Dark'),
-                        color: Colors.grey,
-                        onPressed: () {
-                          var themeManger = getThemeManager(context);
-                          themeManger.setThemeMode(ThemeMode.dark);
-                        },
-                      ),
-                      MaterialButton(
-                        child: Text('Light'),
-                        color: Colors.grey,
-                        onPressed: () {
-                          var themeManger = getThemeManager(context);
-                          themeManger.setThemeMode(ThemeMode.light);
-                        },
-                      ),
-                      MaterialButton(
-                        child: Text('System'),
-                        color: Colors.grey,
-                        onPressed: () {
-                          var themeManger = getThemeManager(context);
-                          themeManger.setThemeMode(ThemeMode.system);
-                        },
-                      ),
                     ],
                   )
                 ],

@@ -9,6 +9,12 @@ class ThemeToggleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
+        BoxShadow(
+          color: Colors.grey,
+          blurRadius: 40.0,
+        ),
+      ]),
       child: IconButton(
         iconSize: 30.0,
         padding: EdgeInsets.all(5),
