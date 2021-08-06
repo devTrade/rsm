@@ -40,12 +40,24 @@ class MiddleAreaWidget extends StatelessWidget {
                           Text(
                               'Take our decorating style quiz to discover your unique style, so you can start designing your dream home.At Havenly, \n \n we believe your home should reflect you. We’ll match you with the perfect designer—no matter what your style or budget is.'),
                           verticalSpaceLarge,
-                          Row(
-                            children: [
-                              Text('hi'),
-                              Text('HI'),
+
+                          ButtonBar(
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              TextButton(
+                                child: Text('CANCEL'),
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                width: 150,
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text('Get Started'),
+                                ),
+                              )
                             ],
-                          )
+                          ),
+                          // RSButton(title: 'Start'),
                         ],
                       ),
                     ),

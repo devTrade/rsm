@@ -9,6 +9,23 @@ final ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: Colors.black,
   textTheme: _textTheme(_darkBase.textTheme),
   primaryTextTheme: _textTheme(_darkBase.textTheme),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: Colors.white,
+      shadowColor: Colors.white,
+    ),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.white),
+      foregroundColor: MaterialStateProperty.all(Colors.black),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        ),
+      ),
+    ),
+  ),
 );
 
 final ThemeData lightTheme = ThemeData(
@@ -17,6 +34,23 @@ final ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   textTheme: _textTheme(_lightBase.textTheme),
   primaryTextTheme: _textTheme(_lightBase.textTheme),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: Colors.black,
+      shadowColor: Colors.black,
+    ),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.black),
+      foregroundColor: MaterialStateProperty.all(Colors.white),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        ),
+      ),
+    ),
+  ),
 );
 
 // . {
