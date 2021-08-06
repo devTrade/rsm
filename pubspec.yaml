@@ -32,6 +32,7 @@ dependencies:
   stacked:
   stacked_themes:
   stacked_services:
+  responsive_builder:
   get_it:
 dev_dependencies:
   flutter_test:
