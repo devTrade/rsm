@@ -34,8 +34,7 @@ dependencies:
   stacked_services:
   responsive_builder:
   get_it:
-  freezed_annotation: ^0.14.1
-  json_annotation: ^4.0.1
+  multi_select_flutter: ^4.0.0
   logger: ^1.0.0
 dev_dependencies:
   flutter_test:
@@ -43,8 +42,6 @@ dev_dependencies:
   stacked_generator:
 # flutter pub run build_runner build
   build_runner:
-  freezed: ^0.14.1+2
-  json_serializable: ^4.1.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
