@@ -7,7 +7,7 @@ import 'middle_widget/middle_widget.dart';
 // ignore: must_be_immutable
 class HomeContentMobile extends StatelessWidget {
   // const HomeContentDesktop({Key? key}) : super(key: key);
-  MainViewModel model;
+  final MainViewModel model;
   HomeContentMobile(this.model) {}
 
   @override
@@ -28,7 +28,7 @@ class HomeContentMobile extends StatelessWidget {
                   verticalSpaceMedium,
                   MainRightSubText(),
                   verticalSpaceLarge,
-                  MainButtonBar(),
+                  MainButtonBar(model),
                 ],
               )),
         ),

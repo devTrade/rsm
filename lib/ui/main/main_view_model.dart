@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:rsm/app/app.locator.dart';
 import 'package:rsm/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -6,13 +7,15 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 class MainViewModel extends BaseViewModel {
-  late bool isDarkTheme = false;
+  late bool isDarkTheme =
+      SchedulerBinding.instance?.window.platformBrightness == Brightness.dark;
   final _nagivationService = locator<NavigationService>();
 
   String title = '';
 
-  void doSomething() {
-    _nagivationService.navigateTo(Routes.darkLightView);
+  void startOnBoarding() {
+    print('onboarding clicket');
+    _nagivationService.navigateTo(Routes.onBoardingView);
   }
 
   void onPressedThemeChange(BuildContext context) {

@@ -18,7 +18,7 @@ class HomeContentTablet extends StatelessWidget {
         NavBarWidget(
             isDarkTheme: model.isDarkTheme,
             onPressed: model.onPressedThemeChange),
-        MiddleTabletAreaWidget(),
+        MiddleTabletAreaWidget(model),
         FooterWidget(),
       ],
     );
@@ -26,7 +26,8 @@ class HomeContentTablet extends StatelessWidget {
 }
 
 class MiddleTabletAreaWidget extends StatelessWidget {
-  const MiddleTabletAreaWidget({Key? key}) : super(key: key);
+  final MainViewModel model;
+  const MiddleTabletAreaWidget(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class MiddleTabletAreaWidget extends StatelessWidget {
                         children: [
                           MainRightSubText(),
                           verticalSpaceLarge,
-                          MainButtonBar(),
+                          MainButtonBar(model),
                           // RSButton(title: 'Start'),
                         ],
                       ),

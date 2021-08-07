@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rsm/app/shared/ui_helper.dart';
+import 'package:rsm/ui/main/main_view_model.dart';
 
 class MainHeadline extends StatelessWidget {
   const MainHeadline({Key? key}) : super(key: key);
@@ -31,7 +32,8 @@ class MainLeftImage extends StatelessWidget {
 }
 
 class MainButtonBar extends StatelessWidget {
-  const MainButtonBar({Key? key}) : super(key: key);
+  final MainViewModel model;
+  const MainButtonBar(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class MainButtonBar extends StatelessWidget {
         SizedBox(
           width: 150,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: model.startOnBoarding,
             child: Text('Get Started'),
           ),
         )
