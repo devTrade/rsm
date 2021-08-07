@@ -16,14 +16,33 @@ class Question extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          questions![questionIndex].questionText ?? '',
+        _QuestionWidget(
+          questions![questionIndex].questionText,
         ), //Question
-        // ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
-        //     .map((answer) {
-        //   return Answer(() => answerQuestion(answer['score']), answer['text']);
-        // }).toList()
+        ...(questions![questionIndex].answers as List<String>).map((answer) {
+          return Text(answer);
+          // return Answer(() => answerQuestion(answer['score']), answer);
+        }).toList()
       ],
-    ); //Column
+    );
+  }
+}
+
+class _QuestionWidget extends StatelessWidget {
+  final String? questionText;
+
+  _QuestionWidget(this.questionText);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(10),
+      child: Text(
+        questionText!,
+        style: TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
+      ), //Text
+    ); //Container
   }
 }

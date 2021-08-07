@@ -1,21 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:rsm/app/app.locator.dart';
-import 'package:rsm/app/app.router.dart';
+import 'package:rsm/models/onboarding_questions.dart';
+import 'package:rsm/service/on_boarding_service.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 class MainViewModel extends BaseViewModel {
   late bool isDarkTheme =
       SchedulerBinding.instance?.window.platformBrightness == Brightness.dark;
-  final _nagivationService = locator<NavigationService>();
-
   String title = '';
+  int state = 0;
 
-  void startOnBoarding() {
-    print('onboarding clicket');
-    _nagivationService.navigateTo(Routes.onBoardingView);
+  final _onBoardingService = locator<OnBoardingService>();
+  var _questionIndex = 0;
+  late List<OnboardingQuestion> _questions;
+
+  get questionIndex => _questionIndex;
+  // get questions => _questions;
+
+  List<OnboardingQuestion>? getQuestions() {
+    _questions = _onBoardingService.getOnboardingQuestions().onboardingQuestion;
+    return _questions;
+  }
+
+  void answerQuestion(dynamic value) {
+    _questionIndex = _questionIndex + 1;
+    print('Answer = ${value}');
+    print(' new index = ${_questionIndex}');
+    if (_questionIndex < _questions.length) {
+      print('We have more questions!');
+    } else {
+      print('No more questions!');
+    }
+    notifyListeners();
   }
 
   void onPressedThemeChange(BuildContext context) {
@@ -26,6 +44,12 @@ class MainViewModel extends BaseViewModel {
       themeManger.setThemeMode(ThemeMode.dark);
     }
     isDarkTheme = !isDarkTheme;
+    notifyListeners();
+  }
+
+  void startOnBoarding() {
+    state++;
+    print(state);
     notifyListeners();
   }
 }

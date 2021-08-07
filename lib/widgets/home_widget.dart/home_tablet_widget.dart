@@ -4,6 +4,7 @@ import 'package:rsm/ui/main/main_view_model.dart';
 import 'package:rsm/widgets/footer_widget.dart/footer_widger.dart';
 import 'package:rsm/widgets/home_widget.dart/middle_widget/middle_widget.dart';
 import 'package:rsm/widgets/nav_bar_widget.dart/nav_bar_widget.dart';
+import 'package:rsm/widgets/onboardin_widget/onboarding_widget.dart';
 
 // ignore: must_be_immutable
 class HomeContentTablet extends StatelessWidget {
@@ -18,10 +19,20 @@ class HomeContentTablet extends StatelessWidget {
         NavBarWidget(
             isDarkTheme: model.isDarkTheme,
             onPressed: model.onPressedThemeChange),
-        MiddleTabletAreaWidget(model),
+        _state(model),
         FooterWidget(),
       ],
     );
+  }
+
+  Widget _state(MainViewModel model) {
+    if (model.state == 0) {
+      return MiddleTabletAreaWidget(model);
+    } else if (model.state == 1) {
+      return OnBoardingWidget(model);
+    } else {
+      return Text("Show Puppy Image");
+    }
   }
 }
 
