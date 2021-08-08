@@ -277,7 +277,7 @@ class __MultiSelectChipFieldViewState<V>
             : null,
         width: MediaQuery.of(context).size.width,
         height: widget.height ?? MediaQuery.of(context).size.height * 0.08,
-        child: ListView.builder(
+        child: ListView.separated(
           controller: _scrollController,
           scrollDirection: Axis.vertical,
           itemCount: _items.length,
@@ -286,6 +286,11 @@ class __MultiSelectChipFieldViewState<V>
                 ? widget.itemBuilder!(
                     _items[index] as MultiSelectItem<V>, widget.state!)
                 : _buildItem(_items[index] as MultiSelectItem<V?>);
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return SizedBox(
+              height: 15,
+            );
           },
         ),
       ),
