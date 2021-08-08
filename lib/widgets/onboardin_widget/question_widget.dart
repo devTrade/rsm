@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_select_flutter/chip_field/multi_select_chip_field.dart';
+import 'package:rsm/app/shared/lib/multi_selected_fields.dart';
 import 'package:rsm/models/onboarding_questions.dart';
-import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class Question extends StatelessWidget {
   final List<OnboardingQuestion>? questions;
@@ -13,7 +12,9 @@ class Question extends StatelessWidget {
     required this.answerQuestion,
     required this.questionIndex,
   });
+  // final _formKeyScreen1 = GlobalKey<FormState>();
 
+  final _reSetKey = GlobalKey<FormFieldState<dynamic>>();
   List<String?> _selectedOptions = [];
   @override
   Widget build(BuildContext context) {
@@ -23,20 +24,21 @@ class Question extends StatelessWidget {
           questions![questionIndex].questionText,
         ), //Question
         MultiSelectChipField<String?>(
+          key: _reSetKey,
+          headerColor: Theme.of(context).backgroundColor,
           items: questions![questionIndex]
               .answers!
               .map((e) => MultiSelectItem<String?>(e, e))
               .toList(),
           icon: Icon(Icons.check),
           onTap: (values) {
+            // _reSetKey.currentState!.reset();
+
             _selectedOptions = values;
             print(_selectedOptions);
+            // answerQuestion(values);
           },
         ),
-        // ...(questions![questionIndex].answers as List<String>).map((answer) {
-        //   return Text(answer);
-        //   // return Answer(() => answerQuestion(answer['score']), answer);
-        // }).toList()
       ],
     );
   }
@@ -60,14 +62,4 @@ class _QuestionWidget extends StatelessWidget {
       ), //Text
     ); //Container
   }
-}
-
-class Animal {
-  final int id;
-  final String name;
-
-  Animal({
-    required this.id,
-    required this.name,
-  });
 }

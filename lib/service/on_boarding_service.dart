@@ -5,10 +5,8 @@ import 'package:rsm/models/onboarding_questions.dart';
 class OnBoardingService {
   OnboardingQuestions getOnboardingQuestions() {
     print(parsedJson);
-    print('hi');
     OnboardingQuestions temp = OnboardingQuestions.fromJson(parsedJson);
-    print(temp);
-    print('hi');
+
     return temp;
   }
 }

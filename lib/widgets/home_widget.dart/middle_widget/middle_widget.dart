@@ -47,7 +47,9 @@ class MainButtonBar extends StatelessWidget {
         SizedBox(
           width: 150,
           child: ElevatedButton(
-            onPressed: model.startOnBoarding,
+            onPressed: () {
+              model.startOnBoarding();
+            },
             child: Text('Get Started'),
           ),
         )

@@ -10,7 +10,6 @@ class OnboardingQuestions {
     if (json['onboardingQuestion'] != null) {
       (json['onboardingQuestion'] as List).forEach((v) {
         if (v != null) {
-          print(v);
           onboardingQuestion.add(new OnboardingQuestion.fromJson(v));
         }
       });

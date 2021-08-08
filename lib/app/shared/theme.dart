@@ -7,6 +7,7 @@ final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   backgroundColor: Colors.black,
   scaffoldBackgroundColor: Colors.black,
+  primaryColor: Colors.white,
   textTheme: _textTheme(_darkBase.textTheme),
   primaryTextTheme: _textTheme(_darkBase.textTheme),
   textButtonTheme: TextButtonThemeData(
@@ -32,6 +33,7 @@ final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   backgroundColor: Colors.white,
   scaffoldBackgroundColor: Colors.white,
+  primaryColor: Colors.black,
   textTheme: _textTheme(_lightBase.textTheme),
   primaryTextTheme: _textTheme(_lightBase.textTheme),
   textButtonTheme: TextButtonThemeData(
@@ -80,7 +82,7 @@ TextTheme _textTheme(TextTheme base) {
         ),
         bodyText1: base.bodyText1!.copyWith(
           fontWeight: FontWeight.w500,
-          fontSize: 16.0,
+          fontSize: 20.0,
         ),
       )
       .apply(

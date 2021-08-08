@@ -26,8 +26,7 @@ class MainViewModel extends BaseViewModel {
 
   void answerQuestion(dynamic value) {
     _questionIndex = _questionIndex + 1;
-    print('Answer = ${value}');
-    print(' new index = ${_questionIndex}');
+
     if (_questionIndex < _questions.length) {
       print('We have more questions!');
     } else {
@@ -49,7 +48,6 @@ class MainViewModel extends BaseViewModel {
 
   void startOnBoarding() {
     state++;
-    print(state);
     notifyListeners();
   }
 }
