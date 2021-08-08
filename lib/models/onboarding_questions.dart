@@ -27,15 +27,23 @@ class OnboardingQuestions {
 
 class OnboardingQuestion {
   String type = 'sayHi';
+  int? choice = 1;
   String? questionText;
   List<String>? answers;
   String? input;
 
   OnboardingQuestion(
-      {required this.type, this.questionText, this.answers, this.input});
+      {required this.type,
+      this.choice,
+      this.questionText,
+      this.answers,
+      this.input});
 
   OnboardingQuestion.fromJson(Map<String, dynamic> json) {
     type = json['type'];
+    if (json['choice'] != null) {
+      choice = int.tryParse(json['choice']) ?? 1;
+    }
     questionText = json['questionText'];
     if (json['answers'] != null) {
       answers = json['answers'].cast<String>();
@@ -46,6 +54,7 @@ class OnboardingQuestion {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['type'] = this.type;
+    data['choice'] = this.choice?.toString();
     data['questionText'] = this.questionText;
     data['answers'] = this.answers;
     data['input'] = this.input;

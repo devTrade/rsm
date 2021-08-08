@@ -32,11 +32,15 @@ class Question extends StatelessWidget {
               .toList(),
           icon: Icon(Icons.check),
           onTap: (values) {
-            // _reSetKey.currentState!.reset();
-
+            print(questions![questionIndex].choice);
             _selectedOptions = values;
             print(_selectedOptions);
-            // answerQuestion(values);
+
+            if (questions![questionIndex].choice != null &&
+                questions![questionIndex].choice == values.length) {
+              _reSetKey.currentState!.reset();
+              answerQuestion(values);
+            }
           },
         ),
       ],

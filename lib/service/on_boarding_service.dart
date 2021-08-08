@@ -15,8 +15,9 @@ final Map<String, dynamic> parsedJson = json.decode('''{
     "product": "money",
     "onboardingQuestion": [
         {
-            "type": "multiChoice",
+            "type": "choice",
             "questionText": "Q1. Who created Flutter?",
+            "choice": "3",
             "answers": [
                 "Facebook",
                 "Adobe",
@@ -25,8 +26,9 @@ final Map<String, dynamic> parsedJson = json.decode('''{
             ]
         },
         {
-            "type": "singleChoice",
+            "type": "choice",
             "questionText": "Q2. What is Flutter?",
+             "choice" : "1",
             "answers": [
                 "Android Development Kit",
                 "IOS Development Kit",

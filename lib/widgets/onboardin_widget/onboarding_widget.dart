@@ -18,7 +18,7 @@ class OnBoardingWidget extends StatelessWidget {
 
   Widget _type(String type) {
     // multiChoice , singleChoice . sayHi , question
-    if (type == 'singleChoice' || type == 'multiChoice')
+    if (type == 'choice')
       return Question(
         answerQuestion: model.answerQuestion,
         questionIndex: model.questionIndex,
