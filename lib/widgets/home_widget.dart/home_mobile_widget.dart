@@ -26,7 +26,7 @@ class HomeContentMobile extends StatelessWidget {
   Widget _state(MainViewModel model) {
     if (model.state == 0) {
       return Expanded(
-        flex: 2,
+        flex: 4,
         child: Padding(
             padding: EdgeInsets.only(right: 20.0, left: 20.0),
             child: Column(

@@ -28,12 +28,13 @@ class SubjectiveQuestions extends StatelessWidget {
             controller: _nameController,
             textAlign: TextAlign.center,
             autofocus: true,
-            style: TextStyle(fontSize: 50, height: 1.5),
+            style: TextStyle(fontSize: 30, height: 1.5),
           ),
         ),
         Spacer(),
         SizedBox(
           width: 150,
+          height: 50,
           child: ElevatedButton(
             onPressed: () {
               this.answerQuestion(_nameController.text);

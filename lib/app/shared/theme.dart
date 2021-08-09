@@ -69,9 +69,13 @@ final ThemeData lightTheme = ThemeData(
 TextTheme _textTheme(TextTheme base) {
   return base
       .copyWith(
-        headline5: base.headline5!.copyWith(
+        headline1: base.headline5!.copyWith(
           fontWeight: FontWeight.w500,
           fontSize: 40.0,
+        ),
+        headline2: base.headline5!.copyWith(
+          fontWeight: FontWeight.w500,
+          fontSize: 30.0,
         ),
         headline6: base.headline6!.copyWith(
           fontSize: 18.0,

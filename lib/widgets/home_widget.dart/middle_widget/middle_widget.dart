@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:rsm/ui/main/main_view_model.dart';
 
 class MainHeadline extends StatelessWidget {
@@ -6,11 +7,18 @@ class MainHeadline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.contain,
-      child: Text(
+    return ScreenTypeLayout(
+      mobile: Text(
         'Personalize your fincancial plan ',
-        style: Theme.of(context).textTheme.headline5,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.headline2,
+      ),
+      tablet: FittedBox(
+        fit: BoxFit.contain,
+        child: Text(
+          'Personalize your fincancial plan ',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
     );
   }

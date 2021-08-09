@@ -337,26 +337,28 @@ class __MultiSelectChipFieldViewState<V>
           padding: EdgeInsets.all(5.0),
           width: 300,
           child: Center(
-            child: Text(
-              item.label,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodyText1,
-              // style: _selectedValues.contains(item.value)
-              //     ? TextStyle(
-              //         color: widget.colorator != null &&
-              //                 widget.colorator!(item.value) != null
-              //             ? widget.colorator!(item.value)!.withOpacity(1)
-              //             : widget.selectedTextStyle != null
-              //                 ? widget.selectedTextStyle!.color
-              //                 : null)
-              //     : TextStyle(
-              //         color: widget.textStyle != null
-              //             ? widget.textStyle!.color ?? widget.chipColor
-              //             : widget.chipColor,
-              //         fontSize: widget.textStyle != null
-              //             ? widget.textStyle!.fontSize
-              //             : null,
-              //       ),
+            child: FittedBox(
+              child: Text(
+                item.label,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.bodyText1,
+                // style: _selectedValues.contains(item.value)
+                //     ? TextStyle(
+                //         color: widget.colorator != null &&
+                //                 widget.colorator!(item.value) != null
+                //             ? widget.colorator!(item.value)!.withOpacity(1)
+                //             : widget.selectedTextStyle != null
+                //                 ? widget.selectedTextStyle!.color
+                //                 : null)
+                //     : TextStyle(
+                //         color: widget.textStyle != null
+                //             ? widget.textStyle!.color ?? widget.chipColor
+                //             : widget.chipColor,
+                //         fontSize: widget.textStyle != null
+                //             ? widget.textStyle!.fontSize
+                //             : null,
+                //       ),
+              ),
             ),
           ),
         ),
