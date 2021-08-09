@@ -1,16 +1,16 @@
-class OnboardingQuestions {
+class OnboardingQuestionsModel {
   String product = 'money';
-  List<OnboardingQuestion> onboardingQuestion = [];
+  List<OnboardingQuestionModel> onboardingQuestion = [];
 
-  OnboardingQuestions(
+  OnboardingQuestionsModel(
       {required this.product, required this.onboardingQuestion});
 
-  OnboardingQuestions.fromJson(Map<String, dynamic> json) {
+  OnboardingQuestionsModel.fromJson(Map<String, dynamic> json) {
     product = json['product'];
     if (json['onboardingQuestion'] != null) {
       (json['onboardingQuestion'] as List).forEach((v) {
         if (v != null) {
-          onboardingQuestion.add(new OnboardingQuestion.fromJson(v));
+          onboardingQuestion.add(new OnboardingQuestionModel.fromJson(v));
         }
       });
     }
@@ -25,21 +25,21 @@ class OnboardingQuestions {
   }
 }
 
-class OnboardingQuestion {
+class OnboardingQuestionModel {
   String type = 'sayHi';
   int? choice = 1;
   String? questionText;
   List<String>? answers;
   String? input;
 
-  OnboardingQuestion(
+  OnboardingQuestionModel(
       {required this.type,
       this.choice,
       this.questionText,
       this.answers,
       this.input});
 
-  OnboardingQuestion.fromJson(Map<String, dynamic> json) {
+  OnboardingQuestionModel.fromJson(Map<String, dynamic> json) {
     type = json['type'];
     if (json['choice'] != null) {
       choice = int.tryParse(json['choice']) ?? 1;

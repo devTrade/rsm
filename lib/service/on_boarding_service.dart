@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:rsm/models/onboarding_questions.dart';
 
 class OnBoardingService {
-  OnboardingQuestions getOnboardingQuestions() {
-    print(parsedJson);
-    OnboardingQuestions temp = OnboardingQuestions.fromJson(parsedJson);
+  OnboardingQuestionsModel getOnboardingQuestions() {
+    OnboardingQuestionsModel temp =
+        OnboardingQuestionsModel.fromJson(parsedJson);
 
     return temp;
   }
@@ -19,7 +19,7 @@ final Map<String, dynamic> parsedJson = json.decode('''{
             "questionText": "Q1. Who created Flutter?",
             "choice": "3",
             "answers": [
-                "Facebook",
+                "Facebookfd sfdzfsf sdfsdfsdsf",
                 "Adobe",
                 "Google",
                 "Microsoft"
@@ -36,11 +36,8 @@ final Map<String, dynamic> parsedJson = json.decode('''{
             ]
         },
         {
-            "type": "sayHi"
-        },
-        {
             "type": "question",
-            "questionText": "Q2. What is Flutter?",
+            "questionText": "Enter your Name",
             "input": "text"
         }
     ]

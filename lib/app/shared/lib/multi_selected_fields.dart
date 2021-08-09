@@ -335,7 +335,7 @@ class __MultiSelectChipFieldViewState<V>
             : null,
         label: Container(
           padding: EdgeInsets.all(5.0),
-          width: 200,
+          width: 300,
           child: Center(
             child: Text(
               item.label,

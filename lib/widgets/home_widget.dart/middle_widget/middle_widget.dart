@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rsm/app/shared/ui_helper.dart';
 import 'package:rsm/ui/main/main_view_model.dart';
 
 class MainHeadline extends StatelessWidget {

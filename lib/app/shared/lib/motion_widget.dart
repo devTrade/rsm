@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Motion<T extends Flex> extends StatefulWidget {
   final List<Widget> children;
   final int durationMs;
@@ -137,13 +138,10 @@ class _MotionState<T extends Flex> extends State<Motion<T>>
     switch (orientation) {
       case MotionOrientation.UP:
         return Offset(0.0, (isExit ? -1 : 1) * animValue);
-        break;
       case MotionOrientation.DOWN:
         return Offset(0.0, (isExit ? 1 : -1) * animValue);
-        break;
       case MotionOrientation.LEFT:
         return Offset((isExit ? -1 : 1) * animValue, 0.0);
-        break;
       default:
         return Offset((isExit ? 1 : -1) * animValue, 0.0);
     }
