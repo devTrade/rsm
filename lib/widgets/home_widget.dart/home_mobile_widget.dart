@@ -43,7 +43,16 @@ class HomeContentMobile extends StatelessWidget {
     } else if (model.state == 1) {
       return OnBoardingWidget(model);
     } else {
-      return Text("Show Puppy Image");
+      return Expanded(
+          flex: 5,
+          child: Column(
+            children: [
+              Text(
+                model.getAnswerInRawString(),
+              ),
+              ElevatedButton(onPressed: () {}, child: Text('Save to DB'))
+            ],
+          ));
     }
   }
 }

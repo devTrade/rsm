@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:rsm/app/app.locator.dart';
@@ -46,14 +48,21 @@ class MainViewModel extends BaseViewModel {
     if (_questionIndex < _questions.length) {
       print('We have more questions!');
     } else {
-      OnBoardingAnswersModels obas =
-          new OnBoardingAnswersModels(onboardingAnswer: obamList);
+      state++;
+      // OnBoardingAnswersModels obas =
+      //     new OnBoardingAnswersModels(onboardingAnswer: obamList);
       //Todo : Ankit Save to firebase
-      print(obas.toJson());
+      // print(jsonEncode(obas));
       // Move to login Screen
       print('No more questions!');
     }
     notifyListeners();
+  }
+
+  String getAnswerInRawString() {
+    OnBoardingAnswersModels obas =
+        new OnBoardingAnswersModels(onboardingAnswer: obamList);
+    return jsonEncode(obas);
   }
 
   void onPressedThemeChange(BuildContext context) {
