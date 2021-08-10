@@ -12,7 +12,7 @@ class MainHeadline extends StatelessWidget {
       mobile: DelayedDisplay(
         delay: Duration(milliseconds: 300),
         child: Text(
-          'Personalize your fincancial plan ',
+          'Unlock Your Financial Potential ',
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline2,
         ),
@@ -22,7 +22,7 @@ class MainHeadline extends StatelessWidget {
         child: DelayedDisplay(
           delay: Duration(milliseconds: 300),
           child: Text(
-            'Personalize your fincancial plan ',
+            'Unlock Your Financial Potential ',
             style: Theme.of(context).textTheme.headline1,
           ),
         ),
@@ -78,6 +78,6 @@ class MainRightSubText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-        'Take our decorating style quiz to discover your unique style, so you can start designing your dream home.At Havenly, \n \n we believe your home should reflect you. We’ll match you with the perfect designer—no matter what your style or budget is.');
+        'Find out how much better off you could be this time next year! \n \n Confused about what you should be doing about money, or wondering what everyone else is doing? Don’t worry about others - let’s figure out the right moves for you, and find out how much better you could be doing!');
   }
 }

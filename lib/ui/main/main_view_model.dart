@@ -12,7 +12,7 @@ import 'package:stacked_themes/stacked_themes.dart';
 class MainViewModel extends BaseViewModel {
   late bool isDarkTheme =
       SchedulerBinding.instance?.window.platformBrightness == Brightness.dark;
-  String title = '';
+  String name = '';
   int state = 0;
   List<OnboardingAnswerModel> obamList = [];
 
@@ -30,6 +30,22 @@ class MainViewModel extends BaseViewModel {
 
   // dynamic _awnsers;
   void answerQuestion(dynamic value) {
+    collectAnswers(value);
+
+    if (_questions[questionIndex].type == 'name') {
+      name = value;
+    }
+    _questionIndex = _questionIndex + 1;
+    if (_questionIndex < _questions.length) {
+      print('We have more questions!');
+    } else {
+      state++;
+      print('No more questions!');
+    }
+    notifyListeners();
+  }
+
+  void collectAnswers(value) {
     if (_questions[questionIndex].questionText != null) {
       List<String> temp = [];
       if (value is List<String?> && value.length > 0) {
@@ -42,21 +58,6 @@ class MainViewModel extends BaseViewModel {
       obamList.add(obam);
       // print(obamList);
     }
-    _questionIndex = _questionIndex + 1;
-
-    // _awnsers = _awnsers + value;
-    if (_questionIndex < _questions.length) {
-      print('We have more questions!');
-    } else {
-      state++;
-      // OnBoardingAnswersModels obas =
-      //     new OnBoardingAnswersModels(onboardingAnswer: obamList);
-      //Todo : Ankit Save to firebase
-      // print(jsonEncode(obas));
-      // Move to login Screen
-      print('No more questions!');
-    }
-    notifyListeners();
   }
 
   String getAnswerInRawString() {

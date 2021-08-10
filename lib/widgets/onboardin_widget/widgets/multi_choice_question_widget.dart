@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rsm/app/shared/lib/delayed_widget.dart';
 import 'package:rsm/app/shared/lib/multi_selected_fields.dart';
 import 'package:rsm/app/shared/ui_helper.dart';
 import 'package:rsm/models/onboarding_questions.dart';
-import 'package:rsm/widgets/onboardin_widget/question_widget.dart';
+import 'package:rsm/widgets/onboardin_widget/widgets/question_widget.dart';
 
 // ignore: must_be_immutable
 class MultiChoiceQuestion extends StatelessWidget {
