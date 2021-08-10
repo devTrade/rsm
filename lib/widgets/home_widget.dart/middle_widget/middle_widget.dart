@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:rsm/app/shared/lib/delayed_widget.dart';
 import 'package:rsm/ui/main/main_view_model.dart';
 
 class MainHeadline extends StatelessWidget {
@@ -8,16 +9,22 @@ class MainHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: Text(
-        'Personalize your fincancial plan ',
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.headline2,
+      mobile: DelayedDisplay(
+        delay: Duration(milliseconds: 300),
+        child: Text(
+          'Personalize your fincancial plan ',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headline2,
+        ),
       ),
       tablet: FittedBox(
         fit: BoxFit.contain,
-        child: Text(
-          'Personalize your fincancial plan ',
-          style: Theme.of(context).textTheme.headline1,
+        child: DelayedDisplay(
+          delay: Duration(milliseconds: 300),
+          child: Text(
+            'Personalize your fincancial plan ',
+            style: Theme.of(context).textTheme.headline1,
+          ),
         ),
       ),
     );

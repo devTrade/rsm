@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rsm/app/shared/lib/delayed_widget.dart';
 import 'package:rsm/app/shared/ui_helper.dart';
 import 'package:rsm/ui/main/main_view_model.dart';
 import 'package:rsm/widgets/footer_widget.dart/footer_widger.dart';
@@ -72,9 +73,13 @@ class MiddleTabletAreaWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 80.0),
                       child: Column(
                         children: [
-                          MainRightSubText(),
+                          DelayedDisplay(
+                              delay: Duration(milliseconds: 300),
+                              child: MainRightSubText()),
                           verticalSpaceLarge,
-                          MainButtonBar(model),
+                          DelayedDisplay(
+                              delay: Duration(milliseconds: 300),
+                              child: MainButtonBar(model)),
                           // RSButton(title: 'Start'),
                         ],
                       ),
